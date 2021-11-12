@@ -1,32 +1,46 @@
 import React from 'react';
+
+// routing
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from 'react-router-dom';
+
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import logo from './logo.svg';
 import './App.css';
+
+// components import
+import Books from './components/Books';
+import Categories from './components/Categories';
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit
-            {' '}
-            <code>src/App.js</code>
-            {' '}
-            and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Books</Link>
+              </li>
+              <li>
+                <Link to="/categories">Categories</Link>
+              </li>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path="/categories">
+              <Categories />
+            </Route>
+            <Route path="/">
+              <Books />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </Provider>
   );
 }

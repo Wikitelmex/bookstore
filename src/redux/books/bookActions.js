@@ -4,9 +4,11 @@ import {
   EDIT_BOOK,
 } from './bookTypes';
 
+const { v4: uuidv4 } = require('uuid');
+
 export const addBook = (book) => ({
   type: ADD_BOOK,
-  payload: book,
+  payload: { ...book, id: uuidv4() },
 });
 
 export const deleteBook = (id) => ({

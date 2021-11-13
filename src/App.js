@@ -23,10 +23,10 @@ function App() {
         <div>
           <nav>
             <ul>
-              <li>
+              <li key="0">
                 <Link to="/">Books</Link>
               </li>
-              <li>
+              <li key="1">
                 <Link to="/categories">Categories</Link>
               </li>
             </ul>

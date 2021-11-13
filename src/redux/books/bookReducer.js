@@ -2,21 +2,15 @@ import {
   ADD_BOOK,
   DELETE_BOOK,
   EDIT_BOOK,
+  FETCH_BOOKS_REQUEST,
+  FETCH_BOOKS_SUCCESS,
+  FETCH_BOOKS_FAILURE,
 } from './bookTypes';
 
 const initialState = {
-  books: [
-    {
-      id: '1',
-      title: 'Book 1',
-      author: 'Author 1',
-    },
-    {
-      id: '2',
-      title: 'Book 2',
-      author: 'Author 2',
-    },
-  ],
+  loading: false,
+  books: [],
+  error: '',
 };
 
 const bookReducer = (state = initialState, action) => {
@@ -29,12 +23,33 @@ const bookReducer = (state = initialState, action) => {
     case DELETE_BOOK:
       return {
         ...state,
-        books: state.books.filter((book) => book.id !== action.payload),
+        books: state.books.filter((book) => book.item_id !== action.payload),
       };
     case EDIT_BOOK:
       return {
         ...state,
-        books: state.books.map((book) => (book.id === action.payload.id ? action.payload : book)),
+        books: state.books.map(
+          (book) => (book.item_id === action.payload.item_id ? action.payload : book),
+        ),
+      };
+    case FETCH_BOOKS_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case FETCH_BOOKS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        books: action.payload,
+        error: '',
+      };
+    case FETCH_BOOKS_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+        books: [],
       };
     default:
       return state;

@@ -24,25 +24,25 @@ const Books = () => {
           </li>
         ))}
       </ul>
-
-      <label htmlFor="title">
-        Title
-        <input type="text" name="title" id="title" value={book.title} onChange={(e) => setBook({ ...book, title: e.target.value })} />
-      </label>
-      <label htmlFor="author">
-        Author
-        <input type="text" name="author" id="author" value={book.author} onChange={(e) => setBook({ ...book, author: e.target.value })} />
-      </label>
-      <button
-        type="submit"
-        onClick={() => {
-          dispatch(addBook(book));
-          setBook({ title: '', author: '' });
-        }}
-      >
-        Add Book
-      </button>
-
+      <form>
+        <label htmlFor="title">
+          Title
+          <input type="text" name="title" id="title" value={book.title} onChange={(e) => setBook({ ...book, title: e.target.value })} />
+        </label>
+        <label htmlFor="author">
+          Author
+          <input type="text" name="author" id="author" value={book.author} onChange={(e) => setBook({ ...book, author: e.target.value })} />
+        </label>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(addBook(book));
+            setBook({ title: '', author: '' });
+          }}
+        >
+          Add Book
+        </button>
+      </form>
     </div>
   );
 };

@@ -12,7 +12,7 @@
 - React
 
 ## Screenshot
-![image](https://user-images.githubusercontent.com/59240486/141654149-fbda0f3c-68e9-4a7e-8d53-e21db9086b06.png)
+![image](https://user-images.githubusercontent.com/59240486/141664525-a7c235b7-c494-44d0-b710-eaee886beb48.png)
 
 ## Getting Started
 Before we start, make sure you fit the prerequisites, the source code is inside the folder SRC/ 

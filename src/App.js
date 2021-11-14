@@ -20,18 +20,31 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li key="0">
-                <Link to="/">Books</Link>
-              </li>
-              <li key="1">
-                <Link to="/categories">Categories</Link>
-              </li>
-            </ul>
+        <div className="m-3">
+        
+          <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <div className="container-fluid ms-5">
+              <Link className="navbar-brand text-primary h1" to="/">Bookstore CMS</Link>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon" />
+              </button>
+              <div className="collapse navbar-collapse ms-auto" id="navbarNavAltMarkup">
+                <div className="navbar-nav me-auto text-light">
+                  <Link to="/" className="nav-link">Books</Link>
+                  <Link to="/categories" className="nav-link">Categories</Link>
+                </div>
+                <div className="navbar-nav ms-auto text-light">
+                  <Link to="/" className="nav-link">carita</Link>
+                </div>
+              </div>
+            </div>
           </nav>
-          <Switch>
+
+          <br />
+          <br />
+          <br />
+          <div>
+          <Switch className="bg-dark">
             <Route path="/categories">
               <Categories />
             </Route>
@@ -39,6 +52,7 @@ function App() {
               <Books />
             </Route>
           </Switch>
+          </div>
         </div>
       </Router>
     </Provider>

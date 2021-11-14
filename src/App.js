@@ -26,7 +26,7 @@ function App() {
             <div className="container-fluid ms-5">
 
               <Link className="navbar-brand text-primary h1" to="/">
-                <h3 className='fw-bold mt-1'>
+                <h3 className="fw-bold mt-1">
                   Bookstore CMS
                 </h3>
               </Link>
@@ -39,7 +39,7 @@ function App() {
                   <Link to="/categories" className="nav-link">Categories</Link>
                 </div>
                 <div className="navbar-nav ms-auto me-4 text-primary">
-                  <h2 class="bi bi-person-circle"></h2>
+                  <i className="bi bi-person-circle h2" />
                 </div>
               </div>
             </div>
